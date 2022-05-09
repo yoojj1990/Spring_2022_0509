@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCal" class="com.yjj.spring_4_1.BMICalculator">
+		<property name="lowWight">
+			<value>18.5</value>
+		</property>
+		<property name="nomalWight">
+			<value>23</value>
+		</property>
+		<property name="overWight">
+			<value>25</value>
+		</property>
+		<property name="obsityWight">
+			<value>30</value>
+		</property>
+	</bean>
+
+	<bean id="myBMI" class="com.yjj.spring_4_1.MyBMI">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="height">
+			<value>180</value>
+		</property>
+		<property name="weight">
+			<value>80</value>
+		</property>
+		<property name="bmiCalcu">
+			<ref bean="bmiCal" />
+		</property>
+		<property name="hobby">
+			<list>
+				<value>게임</value>
+				<value>운동</value>
+				<value>요리</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="yourBMI" class="com.yjj.spring_4_1.MyBMI">
+		<property name="name">
+			<value>이순신</value>
+		</property>
+		<property name="height">
+			<value>188</value>
+		</property>
+		<property name="weight">
+			<value>90</value>
+		</property>
+		<property name="bmiCalcu">
+			<ref bean="bmiCal" />
+		</property>
+		<property name="hobby">
+			<list>
+				<value>일기쓰기</value>
+				<value>활쏘기</value>
+				<value>배타기</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
